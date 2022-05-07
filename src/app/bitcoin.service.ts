@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 interface Response{
@@ -10,7 +11,17 @@ interface Response{
 
 @Injectable()
 export class BitcoinService {
+  current: Response;
+  list: Array<Response> = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  update(){
+    this.http
+      .get<Array<Response>>('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
+      .subscribe((data) => {
+        this.current = data;
+      });
+  }
 
 }
