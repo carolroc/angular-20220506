@@ -8,7 +8,7 @@ interface Repo{
 }
 
 @Injectable({
-  provideIn: 'root';
+  provideIn: 'root'
 })
 export class GithubserviceService {
   repos: Array<Repo> = [];
