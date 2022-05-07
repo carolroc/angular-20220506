@@ -18,9 +18,10 @@ export class BitcoinService {
 
   update(){
     this.http
-      .get<Array<Response>>('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
+      .get<Response>('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
       .subscribe((data) => {
         this.current = data;
+        this.list.push(data);
       });
   }
 
