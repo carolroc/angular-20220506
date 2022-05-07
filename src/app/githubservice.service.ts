@@ -7,9 +7,9 @@ interface Repo{
   full_name: string;
 }
 
-@Injectable(
+@Injectable({
   provideIn: 'root';
-)
+})
 export class GithubserviceService {
   repos: Array<Repo> = [];
   constructor(private http: HttpClient) { }
