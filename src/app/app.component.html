@@ -26,4 +26,8 @@ RA: 0050832011001</h1>
     <th>USD</th>
     <th>EUR</th>
   </tr>
+  <tr *ngFor = 'let rates of this.bitcoinService.list'>
+  <td>{{rates.time.updated}}</td>
+  <td>{{rates.bpi.USD.symbol}}</td>
+</tr>
 </table>
