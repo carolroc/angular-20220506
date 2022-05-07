@@ -10,4 +10,8 @@ export class AppComponent  {
   name = 'Projeto da Carol';
 
   constructor(public gitHubService: GithubserviceService){}
+
+  ngOnInit(){
+    this.gitHubService.update();
+  }
 }
