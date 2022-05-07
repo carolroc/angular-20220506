@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { BitcoinService } from './bitcoin.service';
 import { GithubserviceService } from './githubservice.service';
 
 @Component({
@@ -9,9 +10,13 @@ import { GithubserviceService } from './githubservice.service';
 export class AppComponent  {
   name = 'Projeto da Carol';
 
-  constructor(public gitHubService: GithubserviceService){}
+  constructor(public gitHubService: GithubserviceService, public bitcoinService: BitcoinService){}
 
   ngOnInit(){
     this.gitHubService.update();
+  }
+
+  updateBitcoinRates(){
+    this.bitcoinService.update();
   }
 }
